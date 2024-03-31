@@ -44,7 +44,7 @@
 
   .player {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     flex-direction: column;
     width: 60vw;
     padding-left: 2rem;

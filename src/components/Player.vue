@@ -1,29 +1,25 @@
 <script setup>
   import Metadata from './Metadata.vue';
+  import PlayBackButton from './PlayBackButton.vue';
+  import WaveForm from './WaveForm.vue';
   import { ref } from 'vue';
 
   const props = defineProps({
-    audio: Object,
+    audio: String,
     metadata: Object
   })
 
-  const player = ref(null)
-
-  const audioPlayback = () => {
-    if (player.value) player.value.pause();
-    
-    player.value = new Audio(props.audio);
-    player.value.load();
-    player.value.play();
+  const is_playing = ref(false)
+  const setPlayBackStatus = (flag) => {
+    is_playing.value = flag;
   }
+
 </script>
 
 <template>
   <div class="player">
-    <div  
-      class="playback-btn btn btn-success mb-3"
-      @click="audioPlayback" 
-    />
+    <PlayBackButton @setPlayBackStatus="setPlayBackStatus" />
     <Metadata :metadata="metadata"/>
+    <WaveForm :is_playing="is_playing" :audio="props.audio"/>
   </div>
 </template>
