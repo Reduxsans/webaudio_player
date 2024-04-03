@@ -7,19 +7,32 @@
   const props = defineProps({
     audio: String,
     metadata: Object
-  })
+  });
+  
+  const is_playing = ref(false);
 
-  const is_playing = ref(false)
+  // Update PlayBack Button UI
   const setPlayBackStatus = (flag) => {
-    is_playing.value = flag;
+    is_playing.value = flag; 
   }
 
 </script>
 
 <template>
   <div class="player">
-    <PlayBackButton @setPlayBackStatus="setPlayBackStatus" />
+
+    <PlayBackButton 
+      :is_playing="is_playing" 
+      @setPlayBackStatus="setPlayBackStatus" 
+    />
+    
     <Metadata :metadata="metadata"/>
-    <WaveForm :is_playing="is_playing" :audio="props.audio"/>
+    
+    <WaveForm 
+      :is_playing="is_playing" 
+      :audio="props.audio"
+      @setPlayBackStatus="setPlayBackStatus"
+    />
+
   </div>
 </template>

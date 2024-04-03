@@ -1,12 +1,13 @@
 <script setup>
   import WaveSurfer from 'wavesurfer.js';
-  import { onBeforeUnmount, onMounted, onUpdated, ref, watch } from 'vue';
+  import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
   const props = defineProps({
     audio: String,
     is_playing: Boolean,
   })
 
+  const emit = defineEmits();
   const waveform = ref(null);
   let wavesurfer = null;
 
@@ -25,13 +26,14 @@
     });
   });
 
-  watch(() => props.is_playing, (newVal, oldVal) => {
+  watch(() => props.is_playing, () => {
     wavesurfer.playPause();
   })
 
-  watch(() => props.audio, (newVal, oldVal) => {
+  watch(() => props.audio, () => {
     wavesurfer.empty();
     wavesurfer.load(props.audio);
+    emit("setPlayBackStatus", wavesurfer.isPlaying());
   })
 
   onBeforeUnmount(() => wavesurfer.destroy());
