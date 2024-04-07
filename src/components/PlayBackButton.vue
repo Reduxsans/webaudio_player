@@ -15,8 +15,27 @@
 
 <template>
   <button  
-    class="playback-btn btn btn-success mb-3"
-    @click="playBackOnClick" >
-  {{ props.is_playing ? "Playing": "Paused" }}
-  </button>
+    class="playback-btn mb-3"
+    @click="playBackOnClick"
+    :class="[props.is_playing ? 'btn-pause' : 'btn-play']"
+  />
 </template>
+
+<style>
+  .btn-pause {
+    background-image: url('../assets/pause.svg');
+  }
+
+  .btn-play {
+    background-image: url('../assets/play.svg');
+  }
+
+  .playback-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-size: contain;
+    border: none;
+    background-color: transparent;
+  }
+</style>

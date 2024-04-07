@@ -35,13 +35,7 @@
     justify-content: center;
     align-items: flex-start;
   }
-
-  .playback-btn{
-    width: 60px;
-    height: 60px;
-    border-radius: 30px !important;
-  }
-
+  
   .player {
     display: flex;
     justify-content: flex-end;

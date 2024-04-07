@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="d-flex flex-column mb-2">
+  <div class="d-flex flex-column mb-4">
     
     <div class="row align-items-center">
       <div class="p-2 col-2 fw-bold">Title</div>

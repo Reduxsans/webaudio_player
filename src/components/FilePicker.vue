@@ -40,17 +40,18 @@
 
   .cover-wrapper {
     margin-left: 1.5rem;
-    border: solid #ddd 5px;
+    border: solid #eee 6px;
     display: inline-block;
-    background-size: contain;
+    background-size: cover;
     width: 500px;
     height: 500px;
     transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ddd;
+    background-color: #eee;
     background-blend-mode: multiply;
+    background-repeat: no-repeat
   }
   
   .cover-wrapper:hover {
