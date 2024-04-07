@@ -6,7 +6,8 @@
 
   const props = defineProps({
     audio: String,
-    metadata: Object
+    metadata: Object,
+    album_color: String,
   });
   
   const is_playing = ref(false);
@@ -31,6 +32,7 @@
     <WaveForm 
       :is_playing="is_playing" 
       :audio="props.audio"
+      :album_color="props.album_color"
       @setPlayBackStatus="setPlayBackStatus"
     />
 

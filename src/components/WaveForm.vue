@@ -5,6 +5,7 @@
   const props = defineProps({
     audio: String,
     is_playing: Boolean,
+    album_color: String,
   })
 
   const emit = defineEmits();
@@ -16,7 +17,7 @@
       container: waveform.value,
       normalize: false,
       waveColor: 'white',
-      progressColor: 'skyblue',
+      progressColor: 'white',
       barWidth: 6,
       barGap: 3,
       barRadius: 2,
@@ -33,6 +34,7 @@
   watch(() => props.audio, () => {
     wavesurfer.empty();
     wavesurfer.load(props.audio);
+    wavesurfer.setOptions({ progressColor: props.album_color });
     emit("setPlayBackStatus", wavesurfer.isPlaying());
   })
 

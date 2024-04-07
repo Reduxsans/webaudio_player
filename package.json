@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3",
+    "fast-average-color": "^9.4.0",
     "js-file-manager": "^1.0.9",
     "music-metadata-browser": "^2.5.10",
     "vue": "^3.4.21",
