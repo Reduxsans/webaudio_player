@@ -1,0 +1,16 @@
+.btn-pause {
+  background-image: url('../assets/pause.svg');
+}
+
+.btn-play {
+  background-image: url('../assets/play.svg');
+}
+
+.playback-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+}

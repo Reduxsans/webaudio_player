@@ -1,0 +1,7 @@
+.content {
+  margin-top: 10vh;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+}

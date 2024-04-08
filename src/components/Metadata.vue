@@ -38,15 +38,5 @@
     </div>
     
   </div>
-
+  
 </template>
-
-<style>
-  .row {
-    font-size: 1rem;
-  }
-
-  .col-2 {
-    border-right: solid 2px #eee;
-  }
-</style>

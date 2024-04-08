@@ -3,6 +3,7 @@
   import PlayBackButton from './PlayBackButton.vue';
   import WaveForm from './WaveForm.vue';
   import { ref } from 'vue';
+  import '../style/player.css'
 
   const props = defineProps({
     audio: String,
@@ -35,6 +36,5 @@
       :album_color="props.album_color"
       @setPlayBackStatus="setPlayBackStatus"
     />
-
   </div>
 </template>

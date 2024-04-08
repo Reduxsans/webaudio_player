@@ -3,6 +3,7 @@
   import * as mmdb from 'music-metadata-browser';
   import { ref } from 'vue';
   import { FastAverageColor } from 'fast-average-color';
+  import '../style/filepicker.css'
 
   const emits = defineEmits();
   const album_cover = ref('../src/assets/no_cover.png');
@@ -43,52 +44,3 @@
     <div class="cover-label">Select File</div>
   </div>
 </template>
-
-
-<style>
-
-  .cover-wrapper {
-    margin-left: 1.5rem;
-    border: solid #eee 6px;
-    display: inline-block;
-    background-size: cover;
-    width: 500px;
-    height: 500px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #eee;
-    background-blend-mode: multiply;
-    background-repeat: no-repeat
-  }
-  
-  .cover-wrapper:hover {
-    background-color: #555;
-    background-blend-mode: multiply;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  @keyframes fadeIn {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  
-  .cover-label {
-    width: 100%;
-    height: 100%;
-    font-size: 3rem;
-    visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .cover-wrapper:hover .cover-label {
-    visibility: visible;
-    animation: fadeIn 0.3s;
-  }
-
-</style>
