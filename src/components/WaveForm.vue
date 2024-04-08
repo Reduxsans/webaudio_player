@@ -16,10 +16,9 @@
     wavesurfer = WaveSurfer.create({
       container: waveform.value,
       normalize: false,
-      waveColor: 'white',
-      progressColor: 'white',
-      barWidth: 6,
-      barGap: 3,
+      waveColor: '#eeeeee',
+      barWidth: 5,
+      barGap: 5,
       barRadius: 2,
       height: 100,
       barAlign: 'bottom',
@@ -34,7 +33,12 @@
   watch(() => props.audio, () => {
     wavesurfer.empty();
     wavesurfer.load(props.audio);
-    wavesurfer.setOptions({ progressColor: props.album_color });
+    if (props.album_color != "#000000") {
+      wavesurfer.setOptions({ progressColor: props.album_color });
+    } else {
+      wavesurfer.setOptions({ progressColor: '#888888' });
+    }
+    // emit paused status for playbackbtn
     emit("setPlayBackStatus", wavesurfer.isPlaying());
   })
 
