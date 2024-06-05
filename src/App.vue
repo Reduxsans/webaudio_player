@@ -19,7 +19,7 @@
 <template>
   <div class="content container-fluid">
 
-    <div class="d-flex w-100">
+    <div class="d-flex">
       <FilePicker 
         @file_select="fileSelected"
       />

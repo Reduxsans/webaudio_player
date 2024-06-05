@@ -16,7 +16,7 @@
     wavesurfer = WaveSurfer.create({
       container: waveform.value,
       normalize: false,
-      waveColor: '#eeeeee',
+      waveColor: '#444444',
       barWidth: 5,
       barGap: 5,
       barRadius: 2,

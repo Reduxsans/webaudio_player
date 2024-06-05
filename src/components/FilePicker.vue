@@ -21,6 +21,7 @@
     // Setting Album Cover Image
     const image_buffer = mmdb.selectCover(audio_metadata.common.picture);
     if (image_buffer) {
+      URL.revokeObjectURL(album_cover);
       album_cover.value = URL.createObjectURL(
         new Blob([image_buffer.data], { type: 'image/jpeg' })
       );
